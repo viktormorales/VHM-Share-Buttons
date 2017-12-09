@@ -134,10 +134,10 @@ class Vhm_Share_Buttons_Public {
 				$output .= '<li><a href="https://plus.google.com/share?url='.get_permalink($post->ID).'" onclick="javascript:window.open(this.href,\'share\',\'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=600\');return false;">Share on Google+</a></li>';
 			}
 			if (in_array("whatsapp", $applications)) {
-				$output .= '<li><a href="https://telegram.me/share/url?url='.get_permalink($post->ID).'&text='.get_the_title($post->ID).'" onclick="javascript:window.open(this.href,\'share\',\'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=600\');return false;">Share on WhatsApp</a></li>';
+				$output .= '<li><a href="https://api.whatsapp.com/send?text='.get_permalink($post->ID).'" onclick="javascript:window.open(this.href,\'share\',\'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=600\');return false;">Share on WhatsApp</a></li>';
 			}
 			if (in_array("telegram", $applications)) {
-				$output .= '<li><a href="https://api.whatsapp.com/send?text='.get_permalink($post->ID).'" onclick="javascript:window.open(this.href,\'share\',\'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=600\');return false;">Share on Telegram</a></li>';
+				$output .= '<li><a href="https://telegram.me/share/url?url='.get_permalink($post->ID).'&text='.get_the_title($post->ID).'" onclick="javascript:window.open(this.href,\'share\',\'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=600\');return false;">Share on Telegram</a></li>';
 			}
 			if (in_array("link", $applications)) {
 				$output .= '<li><input type="text" value="'.get_permalink($post->ID).'" onclick="this.select();document.execCommand(\'Copy\');alert(\'Copied to clipboard\')"></li>';
