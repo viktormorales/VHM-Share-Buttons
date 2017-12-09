@@ -3,7 +3,7 @@
 WordPress plugin to share content on the most popular platforms / applications
 
 ## Setup
-* Download the ([Master branch](https://github.com/viktormorales/VHM-Share-Buttons/archive/master.zip)).
+* Download the [Master branch](https://github.com/viktormorales/VHM-Share-Buttons/archive/master.zip).
 * Extract the files from the ZIP.
 * Copy/Upload the folder into your *wp-content/plugins* WordPress folder
 * Activate the plugin and start working.
@@ -19,7 +19,7 @@ WordPress plugin to share content on the most popular platforms / applications
 * ... and the option to copy the link.
 
 ## Author
-* Viktor H. Morales ([viktormorales.com](http://viktormorales.com))
+* Viktor H. Morales ([viktormorales.com](https://viktormorales.com))
 * Twitter: [@viktormorales](http://viktormorales.com)
 
 ## License
