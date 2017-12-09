@@ -51,7 +51,7 @@ class Vhm_Share_Buttons_Activator {
         
 		// Add default options
 		update_option(self::$option_name . '_activate', 'true');
-		update_option(self::$option_name . '_applications', array('facebook','twitter'));
+		update_option(self::$option_name . '_applications', array('facebook','twitter','google','whatsapp','telegram','link'));
 	}
 
 }
