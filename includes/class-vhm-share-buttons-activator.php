@@ -50,8 +50,9 @@ class Vhm_Share_Buttons_Activator {
 		global $wpdb;
         
 		// Add default options
-		update_option(self::$option_name . '_activate', 'true');
+		update_option(self::$option_name . '_active', 'on');
 		update_option(self::$option_name . '_applications', array('facebook','twitter','google','whatsapp','telegram','link'));
+		update_option(self::$option_name . '_source', array('post','page'));
 	}
 
 }

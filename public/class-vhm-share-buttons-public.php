@@ -116,9 +116,10 @@ class Vhm_Share_Buttons_Public {
 		$active = get_option($this->option_name . '_active');
 		$main_title = get_option($this->option_name . '_main_title');
 		$applications = get_option($this->option_name . '_applications');
+		$source = get_option($this->option_name . '_source');
 		$output = '';
 		
-		if ( is_main_query() && is_singular('post') ) {
+		if (is_array($source) && is_singular($source) ) {
 			
 			if ($main_title)
 				$output .= '<h2>'.$main_title.'</h2>';

@@ -170,10 +170,20 @@ class Vhm_Share_Buttons_Admin {
 			$this->option_name . '_general',
 			array( 'label_for' => $this->option_name . '_applications' )
 		);
+
+		add_settings_field(
+			$this->option_name . '_source',
+			__( 'Source', $this->plugin_name ),
+			array( $this, $this->option_name .'_source_cb' ),
+			$this->plugin_name,
+			$this->option_name . '_general',
+			array( 'label_for' => $this->option_name . '_source' )
+		);
 		
 		register_setting( $this->plugin_name, $this->option_name . '_active' );
 		register_setting( $this->plugin_name, $this->option_name . '_main_title' );
 		register_setting( $this->plugin_name, $this->option_name . '_applications' );
+		register_setting( $this->plugin_name, $this->option_name . '_source' );
 	}
 	/**
 	 * Render the text for the general section
@@ -203,6 +213,7 @@ class Vhm_Share_Buttons_Admin {
 	 */
 	public function vhm_share_buttons_main_title_cb() {
 		$main_title = get_option( $this->option_name . '_main_title' );
+		
 		echo '<input type="text" name="' . $this->option_name . '_main_title' . '" id="' . $this->option_name . '_main_title' . '" value="' . $main_title . '">';
 		echo '<p><span class="description">' . __('The title you want to display to invite users to share your post.', $this->plugin_name) . '</span><br></p>';
 	}
@@ -218,31 +229,54 @@ class Vhm_Share_Buttons_Admin {
 		echo '<p>' . __('Choose the applications you want to share your content to:', $this->plugin_name) . '</p>';
 		/* Share on Facebook */
 		echo '<label><input type="checkbox" name="' . $this->option_name . '_applications[]" value="facebook"'; 
-		echo (in_array("facebook", $applications))? " checked" : false;
+		echo (is_array($applications) && in_array("facebook", $applications))? " checked" : false;
 		echo '> Facebook</label><br>';
 		/* Share on Twitter */
 		echo '<label><input type="checkbox" name="' . $this->option_name . '_applications[]" value="twitter"';
-		echo (in_array("twitter", $applications))? " checked" : false;
+		echo (is_array($applications) && in_array("twitter", $applications))? " checked" : false;
 		echo '> Twitter</label><br>';
 		/* Share on Google+ */
 		echo '<label><input type="checkbox" name="' . $this->option_name . '_applications[]" value="google"';
-		echo (in_array("google", $applications))? " checked" : false;
+		echo (is_array($applications) && in_array("google", $applications))? " checked" : false;
 		echo '> Google+</label><br>';
 		/* Share on WhatsApp*/
 		echo '<label><input type="checkbox" name="' . $this->option_name . '_applications[]" value="whatsapp"';
-		echo (in_array("whatsapp", $applications))? " checked" : false;
+		echo (is_array($applications) && in_array("whatsapp", $applications))? " checked" : false;
 		echo '> WhatsApp</label><br>';
 		/* Share on Telegram */
 		echo '<label><input type="checkbox" name="' . $this->option_name . '_applications[]" value="telegram"';
-		echo (in_array("telegram", $applications))? " checked" : false;
+		echo (is_array($applications) && in_array("telegram", $applications))? " checked" : false;
 		echo '> Telegram</label><br>';
 		/* Copy link */
 		echo '<label><input type="checkbox" name="' . $this->option_name . '_applications[]" value="link"';
-		echo (in_array("link", $applications))? " checked" : false;
+		echo (is_array($applications) && in_array("link", $applications))? " checked" : false;
 		echo '> Show the link of the post to copy and paste</label><br>';
 
 		echo '</fieldset>';
 	}
-	
+	/**
+	 * Render the textarea field for "before items template" option
+	 *
+	 * @since  1.0.0
+	 */
+	public function vhm_share_buttons_source_cb() {
+
+		$source = get_option( $this->option_name . '_source' );
+		
+		echo '<fieldset><legend class="screen-reader-text"><span>Applications</span></legend>';
+		echo '<p>' . __('Choose the sources you want to display the buttons:', $this->plugin_name) . '</p>';
+		
+		$args = array(
+		   'public'   => true
+		);
+		foreach ( get_post_types( $args, 'names' ) as $post_type ) {
+		   /*echo '<p>' . $post_type . '</p>';*/
+		   echo '<label><input type="checkbox" name="' . $this->option_name . '_source[]" value="'.$post_type.'"';
+			echo (is_array($source) && in_array($post_type, $source))? " checked" : false;
+			echo '> '.$post_type.'</label><br>';
+		}
+
+		echo '</fieldset>';
+	}
 
 }
