@@ -123,24 +123,24 @@ class Vhm_Share_Buttons_Public {
 			if ($main_title)
 				$output .= '<h2>'.$main_title.'</h2>';
 
-			$output .= '<ul>';
+			$output .= '<ul class="vhm-share-buttons-list">';
 			if (in_array("facebook", $applications)) {
-				$output .= '<li><a href="https://www.facebook.com/sharer/sharer.php?u=' . get_permalink($post->ID) . '" onclick="javascript:window.open(this.href,\'share\',\'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=600\');return false;">Share on Facebook</a></li>';
+				$output .= '<li><a id="vhm-share-buttons-facebook" href="https://www.facebook.com/sharer/sharer.php?u=' . get_permalink($post->ID) . '" onclick="javascript:window.open(this.href,\'share\',\'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=600\');return false;">Share on Facebook</a></li>';
 			}
 			if (in_array("twitter", $applications)) {
-				$output .= '<li><a href="https://twitter.com/share?url='.get_permalink($post->ID).'&text='.get_the_title($post->ID).'" onclick="javascript:window.open(this.href,\'share\',\'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=600\');return false;">Share on Twitter</a></li>';
+				$output .= '<li><a id="vhm-share-buttons-twitter" href="https://twitter.com/share?url='.get_permalink($post->ID).'&text='.get_the_title($post->ID).'" onclick="javascript:window.open(this.href,\'share\',\'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=600\');return false;">Share on Twitter</a></li>';
 			}
 			if (in_array("google", $applications)) {
-				$output .= '<li><a href="https://plus.google.com/share?url='.get_permalink($post->ID).'" onclick="javascript:window.open(this.href,\'share\',\'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=600\');return false;">Share on Google+</a></li>';
+				$output .= '<li><a id="vhm-share-buttons-google" href="https://plus.google.com/share?url='.get_permalink($post->ID).'" onclick="javascript:window.open(this.href,\'share\',\'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=600\');return false;">Share on Google+</a></li>';
 			}
 			if (in_array("whatsapp", $applications)) {
-				$output .= '<li><a href="https://api.whatsapp.com/send?text='.get_permalink($post->ID).'" onclick="javascript:window.open(this.href,\'share\',\'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=600\');return false;">Share on WhatsApp</a></li>';
+				$output .= '<li><a id="vhm-share-buttons-whatsapp" href="https://api.whatsapp.com/send?text='.get_permalink($post->ID).'" data-text="'.get_permalink($post->ID).'" onclick="javascript:window.open(this.href,\'share\',\'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=600\');return false;">Share on WhatsApp</a></li>';
 			}
 			if (in_array("telegram", $applications)) {
-				$output .= '<li><a href="https://telegram.me/share/url?url='.get_permalink($post->ID).'&text='.get_the_title($post->ID).'" onclick="javascript:window.open(this.href,\'share\',\'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=600\');return false;">Share on Telegram</a></li>';
+				$output .= '<li><a id="vhm-share-buttons-telegram" href="https://telegram.me/share/url?url='.get_permalink($post->ID).'&text='.get_the_title($post->ID).'" onclick="javascript:window.open(this.href,\'share\',\'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=600\');return false;">Share on Telegram</a></li>';
 			}
 			if (in_array("link", $applications)) {
-				$output .= '<li><input type="text" value="'.get_permalink($post->ID).'" onclick="this.select();document.execCommand(\'Copy\');alert(\'Copied to clipboard\')"></li>';
+				$output .= '<li><a id="vhm-share-buttons-link" href="'.get_permalink($post->ID).'">Copy link</a></li>';
 			}
 			$output .= '</ul>';
 

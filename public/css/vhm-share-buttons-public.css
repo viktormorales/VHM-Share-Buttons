@@ -2,3 +2,45 @@
  * All of the CSS for your public-facing functionality should be
  * included in this file.
  */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+	.vhm-share-buttons-list li {
+	 	display: inline-block !important;
+	 	width: 50% !important;
+	}
+}
+
+/* For desktops: */
+.vhm-share-buttons-list {
+ 	list-style-type: none;
+}
+.vhm-share-buttons-list li {
+ 	display: block;
+ 	width: 100%;
+}
+.vhm-share-buttons-list li a,.vhm-share-buttons-list li a:hover {
+ 	color: #fff;
+ 	padding: 8px 16px;
+ 	margin: 5px;
+ 	display: block;
+ 	text-align: center;
+}
+.vhm-share-buttons-list li a#vhm-share-buttons-facebook {
+ 	background: #4267b2;
+}
+.vhm-share-buttons-list li a#vhm-share-buttons-twitter {
+ 	background: #1da1f2;
+}
+.vhm-share-buttons-list li a#vhm-share-buttons-google {
+ 	background: #d64532;
+}
+.vhm-share-buttons-list li a#vhm-share-buttons-whatsapp {
+ 	background: #0dc143;
+}
+.vhm-share-buttons-list li a#vhm-share-buttons-telegram {
+ 	background: #2ca5e0;
+}
+.vhm-share-buttons-list li a#vhm-share-buttons-link {
+ 	background: grey;
+}

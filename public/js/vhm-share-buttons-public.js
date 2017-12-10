@@ -28,5 +28,25 @@
 	 * Although scripts in the WordPress core, Plugins and Themes may be
 	 * practising this, we should strive to set a better example in our own work.
 	 */
+	jQuery(function() {
+		if (navigator.userAgent.match(/iPhone|Android/i)) {
+			var link = jQuery("#vhm-share-buttons-whatsapp");
+
+			link.attr("href","whatsapp://send?text=" + link.data('text'));
+	   	}
+
+	   	jQuery("#vhm-share-buttons-link").click(function(e){
+	   		e.preventDefault();
+
+	   		var $temp = jQuery("<input>");
+			jQuery("body").append($temp);
+			$temp.val(jQuery(this).attr("href")).select();
+			document.execCommand("copy");
+			$temp.remove();
+
+	   		alert("Copied to clipboard");
+	   	});
+	   	
+   });
 
 })( jQuery );
