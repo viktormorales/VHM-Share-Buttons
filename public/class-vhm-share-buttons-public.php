@@ -145,6 +145,8 @@ class Vhm_Share_Buttons_Public {
 			}
 			$output .= '</ul>';
 
+			$output .= '<a id="vhm-share-buttons-android" style="display:none;" href="javascript:void()" data-title="'.get_the_title($post->ID).'" data-url="'.get_permalink($post->ID).'">Share</a>';
+
 			if ($active)
 				$post_content = $post_content . $output;
 			

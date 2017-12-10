@@ -35,6 +35,18 @@
 			link.attr("href","whatsapp://send?text=" + link.data('text'));
 	   	}
 
+	   	if (navigator.userAgent.match(/Android/i)) {
+			jQuery(".vhm-share-buttons-list").hide();
+
+			var android_btn = jQuery("#vhm-share-buttons-android");
+
+			android_btn.show();
+			android_btn.click(function(e) {
+				e.preventDefault();
+				navigator.share({title: jQuery(this).data('title'), url: jQuery(this).data('url')}).then(console.log('Share successful'));
+			});
+	   	}
+
 	   	jQuery("#vhm-share-buttons-link").click(function(e){
 	   		e.preventDefault();
 
