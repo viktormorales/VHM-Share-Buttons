@@ -15,6 +15,7 @@
  * @wordpress-plugin
  * Plugin Name:       VHM Share buttons
  * Plugin URI:        https://viktormorales.com
+ * GitHub Plugin URI: viktormorales/VHM-Share-Buttons
  * Description:       Add social buttons to your WordPress Theme.
  * Version:           1.0.0
  * Author:            Viktor H. Morales
