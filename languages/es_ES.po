@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plantilla Wordpress\n"
-"POT-Creation-Date: 2017-12-16 22:10+0200\n"
-"PO-Revision-Date: 2017-12-16 22:13+0200\n"
+"POT-Creation-Date: 2017-12-16 22:17+0200\n"
+"PO-Revision-Date: 2017-12-16 22:18+0200\n"
 "Last-Translator: Viktor H. Morales <viktorhugomorales@gmail.com>\n"
 "Language-Team: Viktor H. Morales <viktorhugomorales@gmail.com>\n"
 "Language: es\n"
@@ -69,6 +69,34 @@ msgstr "Elije las aplicaciones en las que quieras compartir el contenido:"
 #: ../admin/class-vhm-share-buttons-admin.php:267
 msgid "Choose the sources you want to display the buttons:"
 msgstr "Elije las fuentes donde quieras mostrar los botones:"
+
+#: ../public/class-vhm-share-buttons-public.php:129
+msgid "Share on Facebook"
+msgstr "Compartir en Facebook"
+
+#: ../public/class-vhm-share-buttons-public.php:132
+msgid "Share on Twitter"
+msgstr "Compartir en Twitter"
+
+#: ../public/class-vhm-share-buttons-public.php:135
+msgid "Share on Google+"
+msgstr "Compartir en Google+"
+
+#: ../public/class-vhm-share-buttons-public.php:138
+msgid "Share on WhatsApp"
+msgstr "Compartir en WhatsApp"
+
+#: ../public/class-vhm-share-buttons-public.php:141
+msgid "Share on Telegram"
+msgstr "Compartir en Telegram"
+
+#: ../public/class-vhm-share-buttons-public.php:144
+msgid "Copy link"
+msgstr "Copiar enlace"
+
+#: ../public/class-vhm-share-buttons-public.php:148
+msgid "Share on..."
+msgstr "Compartir en..."
 
 #~ msgid "Previous page"
 #~ msgstr "Anterior"
