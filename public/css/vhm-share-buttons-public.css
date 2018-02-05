@@ -28,20 +28,21 @@
  	text-align: center;
  	text-decoration: none;
 }
+
 .vhm-share-buttons-list li a#vhm-share-buttons-facebook {
- 	background: #4267b2;
+ 	background: #3b5998;
 }
 .vhm-share-buttons-list li a#vhm-share-buttons-twitter {
- 	background: #1da1f2;
+ 	background: #1DA1F2;
 }
 .vhm-share-buttons-list li a#vhm-share-buttons-google {
- 	background: #d64532;
+ 	background: #DB4437;
 }
 .vhm-share-buttons-list li a#vhm-share-buttons-whatsapp {
- 	background: #0dc143;
+ 	background: #4dc247;
 }
 .vhm-share-buttons-list li a#vhm-share-buttons-telegram {
- 	background: #2ca5e0;
+ 	background: #0088cc;
 }
 .vhm-share-buttons-list li a#vhm-share-buttons-link {
  	background: grey;
