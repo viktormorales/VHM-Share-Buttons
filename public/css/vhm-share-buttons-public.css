@@ -13,6 +13,9 @@
 
 /* For desktops: */
 .vhm-share-buttons-list {
+ 	margin: 5px 0;
+}
+.vhm-share-buttons-list {
  	list-style-type: none;
  	padding: 0px;
 }
@@ -47,6 +50,6 @@
 .vhm-share-buttons-list li a#vhm-share-buttons-link {
  	background: grey;
 }
-a#vhm-share-buttons-android {
+#vhm-share-buttons-android {
  	background: #0dc143;
 }
