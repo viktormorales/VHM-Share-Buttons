@@ -1,0 +1,429 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Plantilla Wordpress\n"
+"POT-Creation-Date: 2018-04-09 15:15+0600\n"
+"PO-Revision-Date: 2018-04-09 15:21+0600\n"
+"Last-Translator: Viktor H. Morales <viktorhugomorales@gmail.com>\n"
+"Language-Team: Viktor H. Morales <viktorhugomorales@gmail.com>\n"
+"Language: it_IT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.4\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_nx:4c,1,2;_ex:1,2c\n"
+"X-Poedit-SearchPath-0: ..\n"
+"X-Poedit-SearchPathExcluded-0: ../js\n"
+
+#: ../admin/class-vhm-share-buttons-admin.php:119
+msgid "VHM Share Buttons Settings"
+msgstr ""
+
+#: ../admin/class-vhm-share-buttons-admin.php:120
+#: ../admin/class-vhm-share-buttons-admin.php:289
+msgid "VHM Share Buttons"
+msgstr ""
+
+#: ../admin/class-vhm-share-buttons-admin.php:142
+msgid "General"
+msgstr "General"
+
+#: ../admin/class-vhm-share-buttons-admin.php:149
+msgid "Active"
+msgstr "Attive"
+
+#: ../admin/class-vhm-share-buttons-admin.php:158
+msgid "Title"
+msgstr "Titolo"
+
+#: ../admin/class-vhm-share-buttons-admin.php:167
+msgid "Applications"
+msgstr "Applicazioni"
+
+#: ../admin/class-vhm-share-buttons-admin.php:176
+msgid "Source"
+msgstr "Sorgente"
+
+#: ../admin/class-vhm-share-buttons-admin.php:194
+msgid ""
+"Display buttons at the end of your content to share in the applications "
+"listed below."
+msgstr ""
+"Visualizza i pulsanti alla fine del tuo contenuto per condividere le "
+"applicazioni elencate di seguito."
+
+#: ../admin/class-vhm-share-buttons-admin.php:207
+msgid "Tick the box if you want to display the buttons."
+msgstr "Spunta la casella se vuoi visualizzare i pulsanti."
+
+#: ../admin/class-vhm-share-buttons-admin.php:218
+msgid "The title you want to display to invite users to share your post."
+msgstr ""
+"Il titolo che desideri visualizzare per invitare gli utenti a condividere il "
+"tuo post."
+
+#: ../admin/class-vhm-share-buttons-admin.php:229
+msgid "Choose the applications you want to share your content to:"
+msgstr "Scegli le applicazioni a cui vuoi condividere i tuoi contenuti:"
+
+#: ../admin/class-vhm-share-buttons-admin.php:267
+msgid "Choose the sources you want to display the buttons:"
+msgstr "Scegli le fonti che vuoi visualizzare i pulsanti:"
+
+#: ../admin/class-vhm-share-buttons-admin.php:308
+msgid "Show share buttons on this page."
+msgstr "Mostra pulsanti di condivisione in questa pagina."
+
+#: ../public/class-vhm-share-buttons-public.php:135
+msgid "Facebook"
+msgstr "Facebook"
+
+#: ../public/class-vhm-share-buttons-public.php:138
+msgid "Twitter"
+msgstr "Twitter"
+
+#: ../public/class-vhm-share-buttons-public.php:141
+msgid "Google+"
+msgstr "Google+"
+
+#: ../public/class-vhm-share-buttons-public.php:144
+msgid "WhatsApp"
+msgstr "WhatsAoo"
+
+#: ../public/class-vhm-share-buttons-public.php:147
+msgid "Telegram"
+msgstr "Telegram"
+
+#: ../public/class-vhm-share-buttons-public.php:150
+msgid "Copy link"
+msgstr "Condividi il link"
+
+#: ../public/class-vhm-share-buttons-public.php:154
+msgid "Share on..."
+msgstr "Condividere su..."
+
+#~ msgid "Previous page"
+#~ msgstr "Pagina precedente"
+
+#~ msgid "Next page"
+#~ msgstr "Pagina succesiva"
+
+#~ msgid "Products"
+#~ msgstr "Prodotti"
+
+#~ msgid "Product"
+#~ msgstr "Prodotto"
+
+#~ msgid "Categories"
+#~ msgstr "Categorie"
+
+#~ msgid "Header widget"
+#~ msgstr "Widget di intestazione"
+
+#~ msgid "Widgets in this area will be shown in the header."
+#~ msgstr "I widget in quest'area verranno mostrati nell'intestazione."
+
+#~ msgid "Products options"
+#~ msgstr "Opzioni di prodotti"
+
+#~ msgid "More information"
+#~ msgstr "Maggiori informazioni"
+
+#~ msgid "BUY NOW!"
+#~ msgstr "ACQUISTA ORA!"
+
+#~ msgid ""
+#~ "This post is password protected. Enter the password to view any comments."
+#~ msgstr ""
+#~ "Este artículo está protegido. Ingrese la contraseña para ver los "
+#~ "comentarios."
+
+#~ msgid "1 comment"
+#~ msgstr "1 comentario"
+
+#~ msgid "% comments"
+#~ msgstr "% comentarios"
+
+#~ msgid "Help me by leaving a reply! :)"
+#~ msgstr "¡Ayudame dejando tu comentario! :)"
+
+#~ msgid "Right Sidebar"
+#~ msgstr "Barra lateral derecha"
+
+#~ msgid "Your comment is awaiting moderation."
+#~ msgstr "Su comentario aguarda moderación"
+
+#~ msgid "%1$s at %2$s"
+#~ msgstr "%1$s a las %2$s"
+
+#~ msgid "(Edit)"
+#~ msgstr "(Editar)"
+
+#~ msgid "Theme by graphic and web designer %s"
+#~ msgstr "Theme por el diseñador gráfico y web %s"
+
+#~ msgid "Continue reading"
+#~ msgstr "Continuar leyendo"
+
+#~ msgid "Android theme color"
+#~ msgstr "Color de tema Android"
+
+#~ msgid "Footer background color"
+#~ msgstr "Color de fondo de pie de página web"
+
+#~ msgid "Footer background image"
+#~ msgstr "Imagen de fondo del pie de página"
+
+#~ msgid "Have we worked together?"
+#~ msgstr "¿Hemos trabajado juntos?"
+
+#~ msgid ""
+#~ "Leave your testimonial about the project we have worked together and my "
+#~ "performance on it."
+#~ msgstr ""
+#~ "Dejá tu testimonio sobre el proyecto en el que trabajamos y mi desempeño "
+#~ "en el mismo."
+
+#~ msgid "Leave your testimonial"
+#~ msgstr "Escribir testimonio"
+
+#~ msgid "About"
+#~ msgstr "Acerca"
+
+#~ msgid "Services"
+#~ msgstr "Servicios"
+
+#~ msgid "Testimonials"
+#~ msgstr "Testimoniales"
+
+#~ msgid "Portfolio"
+#~ msgstr "Trabajos"
+
+#~ msgid "More about me"
+#~ msgstr "Más sobre mí"
+
+#~ msgid "Contact"
+#~ msgstr "Contacto"
+
+#~ msgid "Testimonial"
+#~ msgstr "Testimonios"
+
+#~ msgid "Customers"
+#~ msgstr "Clientes"
+
+#~ msgid "Customer"
+#~ msgstr "Cliente"
+
+#~ msgid "Service"
+#~ msgstr "Servicio"
+
+#~ msgid "Powered by %s"
+#~ msgstr "Blog gracias a %s"
+
+#~ msgid "Home"
+#~ msgstr "Inicio"
+
+#~ msgid "View on GitHub"
+#~ msgstr "Ver en GitHub"
+
+#~ msgid "Report an issue"
+#~ msgstr "Reportar un error"
+
+#~ msgid "Contact me"
+#~ msgstr "Contactame"
+
+#~ msgid "This is what my customers say."
+#~ msgstr "Esto es lo que dicen mis clientes."
+
+#~ msgid "More information about this service"
+#~ msgstr "Más información sobre este servicio"
+
+#~ msgid "Read full testimonial"
+#~ msgstr "Leer testimonial completo"
+
+#~ msgid "See more testimonials"
+#~ msgstr "Más testimonios"
+
+#~ msgid "Write your testimonial"
+#~ msgstr "Escribe tu testimonio"
+
+#~ msgid "More testimonials"
+#~ msgstr "Más testimonios"
+
+#~ msgid "Explore all my works"
+#~ msgstr "Explora  todos mis trabajos"
+
+#~ msgid "Read more articles"
+#~ msgstr "Leer más artículos"
+
+#~ msgid "Page"
+#~ msgstr "Página"
+
+#~ msgid "I'm Victor! Graphic and web designer, and social media manager."
+#~ msgstr "¡Soy Victor! Diseñador gráfico y web, y social media manager."
+
+#~ msgid ""
+#~ "I specialize in designing responsive web design. I have worked with "
+#~ "companies and people from Argentina and around the world since 2006, "
+#~ "always providing solutions."
+#~ msgstr ""
+#~ "Me especializo en el diseño de sitios web responsivos. He trabajado con "
+#~ "empresas y personas de Argentina y el mundo desde el 2006 siempre dando "
+#~ "soluciones."
+
+#~ msgid ""
+#~ "Websites | Branding | Brochures | E-Marketing | Social Media | And more..."
+#~ msgstr ""
+#~ "Sitios web | Branding | Folleteria | E-Marketing | Social Media | Y más..."
+
+#~ msgid "I'm Victor!"
+#~ msgstr "¡Soy Victor!"
+
+#~ msgid "Digital nomad."
+#~ msgstr "Nómada digital."
+
+#~ msgid "Last things i've been doing so far..."
+#~ msgstr "Cosas que he estado haciendo hasta ahora..."
+
+#~ msgid "... or just jump to"
+#~ msgstr "... o saltá directamente a"
+
+#~ msgid "Comment"
+#~ msgstr "Comentar"
+
+#~ msgid "Edit"
+#~ msgstr "Editar"
+
+#~ msgid "Increase your sales!"
+#~ msgstr "¡Incrementa tus ventas!"
+
+#~ msgid "Turn your website visitors into buyers."
+#~ msgstr "Convierte a tus visitantes web en compradores."
+
+#~ msgid "Be your own boss!"
+#~ msgstr "¡Se tu propio jefe!"
+
+#~ msgid "Start your own business online and be the owner of your future."
+#~ msgstr "Emprende tu propio negocio en linea y se el dueño de tu futuro."
+
+#~ msgid "Be more social!"
+#~ msgstr "¡Se más social!"
+
+#~ msgid ""
+#~ "Promote your products or services through the most popular social "
+#~ "networks."
+#~ msgstr ""
+#~ "Promociona tus productos o servicios en las redes sociales más populares."
+
+#~ msgid "... or read all the testimonials"
+#~ msgstr "... o lee todos los testimonios"
+
+#~ msgid "I'm Victor! Graphic and web designer, traveler, writer and artist."
+#~ msgstr "¡Soy Victor! Diseñador gráfico y web, viajero, escritor y artista."
+
+#~ msgid ""
+#~ "I specialize in designing responsive web design. I have worked with "
+#~ "companies and people from Argentina and around the world since 2006, "
+#~ "always providing solutions. I also live a nomadic life as a volunteer, "
+#~ "exchanging help."
+#~ msgstr ""
+#~ "Me especializo en el diseño de páginas web adaptables. He trabajado con "
+#~ "empresas y personas de Argentina y alrededor del mundo desde el 2006, "
+#~ "siempre dando soluciones. También vivo una vida nómade como voluntario, "
+#~ "intercambiando ayuda."
+
+#~ msgid "Continue scrolling..."
+#~ msgstr "Continúa desplazándo..."
+
+#~ msgid "read more &raquo;"
+#~ msgstr "leer más &raquo;"
+
+#~ msgid "More in %s &raquo;"
+#~ msgstr "Más en %s &raquo;"
+
+#~ msgid "Theme by %s"
+#~ msgstr "Diseño por %s"
+
+#~ msgid "Hosted by %s"
+#~ msgstr "Hospedado en %s"
+
+#~ msgid "%1$s on %2$s"
+#~ msgstr "%1$s el %2$s"
+
+#~ msgid "There's no greater freedom than being able to choose."
+#~ msgstr "No hay mayor libertad que la de poder elegir."
+
+#~ msgid "Search..."
+#~ msgstr "Buscar..."
+
+#~ msgid ""
+#~ "I specialize in designing web pages adaptable. I have worked with "
+#~ "companies and people from Argentina and around the world since 2006, "
+#~ "always providing solutions. I also live a nomadic life as a volunteer, "
+#~ "exchanging help."
+#~ msgstr ""
+#~ "Me especializo en el diseño de páginas web adaptables. He trabajado con "
+#~ "empresas y personas de Argentina y alrededor del mundo desde el 2006, "
+#~ "siempre dando soluciones. También vivo una vida nómade como voluntario, "
+#~ "intercambiando ayuda."
+
+#~ msgid "More articles &raquo;"
+#~ msgstr "Más artículos &raquo;"
+
+#~ msgid "Continue reading and comment"
+#~ msgstr "Continuar leyendo y comentar"
+
+#~ msgid "Theme settings"
+#~ msgstr "Opciones de plantilla"
+
+#~ msgid "Powered by"
+#~ msgstr "Con tecnología de"
+
+#~ msgid "hosted by"
+#~ msgstr "hospedado por"
+
+#~ msgid "Designed by"
+#~ msgstr "Diseño por"
+
+#~ msgid "Table of contents"
+#~ msgstr "Tabla de contenidos"
+
+#~ msgid "Reply <span>&darr;</span>"
+#~ msgstr "Responder <span>&darr;</span>"
+
+#~ msgid "In the blog!"
+#~ msgstr "¡En el blog!"
+
+#~ msgid "Home Settings"
+#~ msgstr "Opciones de la página de incio"
+
+#~ msgid "First Block title"
+#~ msgstr "Título del primer bloque"
+
+#~ msgid "First block category"
+#~ msgstr "Categoría del primer bloque"
+
+#~ msgid "Second Block title"
+#~ msgstr "Título del segundo bloque"
+
+#~ msgid "Second block category"
+#~ msgstr "Categoría del segundo bloque"
+
+#~ msgid "Configure your home page:"
+#~ msgstr "Configurá tu página inicial"
+
+#~ msgid "&mdash; Select &mdash;"
+#~ msgstr "&mdash; Elegir &mdash;"
+
+#~ msgid "More interesting articles!"
+#~ msgstr "Más artículos interesantes!"
+
+#~ msgctxt "comments title"
+#~ msgid "1 comment"
+#~ msgid_plural "%1$s comments"
+#~ msgstr[0] "1 comentario"
+#~ msgstr[1] "%1$s comentarios"
+
+#~ msgid "read more"
+#~ msgstr "continuar leyendo"
