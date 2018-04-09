@@ -279,4 +279,34 @@ class Vhm_Share_Buttons_Admin {
 		echo '</fieldset>';
 	}
 
+	public function add_meta_box()
+    {
+
+        $screens = get_option($this->option_name . '_source');
+        foreach ($screens as $screen) {
+            add_meta_box(
+                'vhm_share_buttons_meta_box',          // Unique ID
+                __('VHM Share Buttons', VHMTHEME_TEXTDOMAIN), // Box title
+                [self::class, 'html_meta_box'],   // Content callback, must be of type callable
+                $screens,
+                'advanced'
+            );
+        }
+    }
+ 
+    public function save_meta_box($post_id)
+    {
+        $state = ($_POST['vhm_share_buttons_show_in_page']) ? 'on' : 'off' ;
+        update_post_meta($post_id,'_vhm_share_buttons_show_in_page',$state);
+    }
+ 
+    public function html_meta_box($post)
+    {
+        $vhm_share_buttons_show_in_page = get_post_meta($post->ID, '_vhm_share_buttons_show_in_page', true);
+        $state = (!$vhm_share_buttons_show_in_page || $vhm_share_buttons_show_in_page === 0) ? 'on' : $vhm_share_buttons_show_in_page ;
+        ?>
+        <p class="meta-options"><label><input type="checkbox" id="vhm_share_buttons_show_in_page" name="vhm_share_buttons_show_in_page" value="1" <?php checked( $state, 'on' ); ?>> <?php _e('Show share buttons on this page.', VHMTHEME_TEXTDOMAIN) ?></label></p>
+    	
+        <?php
+    }
 }

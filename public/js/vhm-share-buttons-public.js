@@ -29,13 +29,17 @@
 	 * practising this, we should strive to set a better example in our own work.
 	 */
 	jQuery(function() {
-		if (navigator.userAgent.match(/iPhone|Android/i)) {
+		/* If the userAgent is iPhone or Android
+		 * change the HREF link with the whatsapp
+	     */
+		if (navigator.userAgent.match(/iPhone|Android/i)) 
+		{
 			var link = jQuery("#vhm-share-buttons-whatsapp");
-
 			link.attr("href","whatsapp://send?text=" + link.data('text'));
 	   	}
 
-	   	if (navigator.userAgent.match(/Android/i)) {
+	   	if (navigator.userAgent.match(/Android/i)) 
+	   	{
 			jQuery(".vhm-share-buttons-list").hide();
 
 			var android_btn = jQuery("#vhm-share-buttons-android");
@@ -47,7 +51,8 @@
 			});
 	   	}
 
-	   	jQuery("#vhm-share-buttons-link").click(function(e){
+	   	jQuery("#vhm-share-buttons-link").click(function(e)
+	   	{
 	   		e.preventDefault();
 
 	   		var $temp = jQuery("<input>");

@@ -113,46 +113,50 @@ class Vhm_Share_Buttons_Public {
 		global $post;
 
 		$active = get_option($this->option_name . '_active');
+		$state = ($vhm_share_buttons_show_in_page == 0) ? 'on' : $vhm_share_buttons_show_in_page ;
 		$main_title = get_option($this->option_name . '_main_title');
 		$applications = get_option($this->option_name . '_applications');
 		$source = get_option($this->option_name . '_source');
 		
 		$output = '';
 		
-			if (is_array($source) && is_singular($source)) {
-				
-				$output .= '<div class="vhm-share-buttons" style="clear:both">';
-				
-				if ($main_title)
-					$output .= '<h2>'.$main_title.'</h2>';
+		$vhm_share_buttons_show_in_page = get_post_meta($post->ID, '_vhm_share_buttons_show_in_page', true);
+		$show_in_page = (!$vhm_share_buttons_show_in_page || $vhm_share_buttons_show_in_page === 0) ? 'on' : $vhm_share_buttons_show_in_page ;
 
-				$output .= '<ul class="vhm-share-buttons-list">';
-				if (in_array("facebook", $applications)) {
-					$output .= '<li><a id="vhm-share-buttons-facebook" href="https://www.facebook.com/sharer/sharer.php?u=' . get_permalink($post->ID) . '" onclick="javascript:window.open(this.href,\'share\',\'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=600\');return false;"><i class="fa fa-facebook"></i> ' . __('Facebook', $this->plugin_name) . '</a></li>';
-				}
-				if (in_array("twitter", $applications)) {
-					$output .= '<li><a id="vhm-share-buttons-twitter" href="https://twitter.com/share?url='.get_permalink($post->ID).'&text='.get_the_title($post->ID).'" onclick="javascript:window.open(this.href,\'share\',\'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=600\');return false;"><i class="fa fa-twitter"></i> ' . __('Twitter', $this->plugin_name) . '</a></li>';
-				}
-				if (in_array("google", $applications)) {
-					$output .= '<li><a id="vhm-share-buttons-google" href="https://plus.google.com/share?url='.get_permalink($post->ID).'" onclick="javascript:window.open(this.href,\'share\',\'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=600\');return false;"><i class="fa fa-google-plus-g"></i> ' . __('Google+', $this->plugin_name) . '</a></li>';
-				}
-				if (in_array("whatsapp", $applications)) {
-					$output .= '<li><a id="vhm-share-buttons-whatsapp" href="https://api.whatsapp.com/send?text='.get_permalink($post->ID).'" data-text="'.get_permalink($post->ID).'" onclick="javascript:window.open(this.href,\'share\',\'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=600\');return false;"><i class="fa fa-whatsapp"></i> ' . __('WhatsApp', $this->plugin_name) . '</a></li>';
-				}
-				if (in_array("telegram", $applications)) {
-					$output .= '<li><a id="vhm-share-buttons-telegram" href="https://telegram.me/share/url?url='.get_permalink($post->ID).'&text='.get_the_title($post->ID).'" onclick="javascript:window.open(this.href,\'share\',\'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=600\');return false;"><i class="fa fa-telegram"></i> ' . __('Telegram', $this->plugin_name) . '</a></li>';
-				}
-				if (in_array("link", $applications)) {
-					$output .= '<li><a id="vhm-share-buttons-link" href="'.get_permalink($post->ID).'"><i class="fa fa-copy"></i>  ' . __('Copy link', $this->plugin_name) . '</a></li>';
-				}
-				$output .= '</ul>';
+		if (is_array($source) && is_singular($source) && $show_in_page == 'on') {
+			
+			$output .= '<div class="vhm-share-buttons" style="clear:both">';
+			
+			if ($main_title)
+				$output .= '<h2>'.$main_title.'</h2>';
 
-				$output .= '<a id="vhm-share-buttons-android" style="display:none;" href="javascript:void()" data-title="'.get_the_title($post->ID).'" data-url="'.get_permalink($post->ID).'">' . __('Share on...', $this->plugin_name) . '</a></div>';
-
-				if ($active)
-					$post_content = $post_content . $output;
-				
+			$output .= '<ul class="vhm-share-buttons-list">';
+			if (in_array("facebook", $applications)) {
+				$output .= '<li><a id="vhm-share-buttons-facebook" href="https://www.facebook.com/sharer/sharer.php?u=' . get_permalink($post->ID) . '" onclick="javascript:window.open(this.href,\'share\',\'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=600\');return false;"><i class="fa fa-facebook"></i> ' . __('Facebook', $this->plugin_name) . '</a></li>';
 			}
+			if (in_array("twitter", $applications)) {
+				$output .= '<li><a id="vhm-share-buttons-twitter" href="https://twitter.com/share?url='.get_permalink($post->ID).'&text='.get_the_title($post->ID).'" onclick="javascript:window.open(this.href,\'share\',\'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=600\');return false;"><i class="fa fa-twitter"></i> ' . __('Twitter', $this->plugin_name) . '</a></li>';
+			}
+			if (in_array("google", $applications)) {
+				$output .= '<li><a id="vhm-share-buttons-google" href="https://plus.google.com/share?url='.get_permalink($post->ID).'" onclick="javascript:window.open(this.href,\'share\',\'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=600\');return false;"><i class="fa fa-google-plus-g"></i> ' . __('Google+', $this->plugin_name) . '</a></li>';
+			}
+			if (in_array("whatsapp", $applications)) {
+				$output .= '<li><a id="vhm-share-buttons-whatsapp" href="https://api.whatsapp.com/send?text='.get_permalink($post->ID).'" data-text="'.get_permalink($post->ID).'" onclick="javascript:window.open(this.href,\'share\',\'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=600\');return false;"><i class="fa fa-whatsapp"></i> ' . __('WhatsApp', $this->plugin_name) . '</a></li>';
+			}
+			if (in_array("telegram", $applications)) {
+				$output .= '<li><a id="vhm-share-buttons-telegram" href="https://telegram.me/share/url?url='.get_permalink($post->ID).'&text='.get_the_title($post->ID).'" onclick="javascript:window.open(this.href,\'share\',\'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=600\');return false;"><i class="fa fa-telegram"></i> ' . __('Telegram', $this->plugin_name) . '</a></li>';
+			}
+			if (in_array("link", $applications)) {
+				$output .= '<li><a id="vhm-share-buttons-link" href="'.get_permalink($post->ID).'"><i class="fa fa-copy"></i>  ' . __('Copy link', $this->plugin_name) . '</a></li>';
+			}
+			$output .= '</ul>';
+
+			$output .= '<a id="vhm-share-buttons-android" style="display:none;" href="javascript:void()" data-title="'.get_the_title($post->ID).'" data-url="'.get_permalink($post->ID).'">' . __('Share on...', $this->plugin_name) . '</a></div>';
+
+			if ($active)
+				$post_content = $post_content . $output;
+			
+		}
 		
         return $post_content;
 	}
