@@ -6,32 +6,40 @@
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
 	.vhm-share-buttons-list li {
+		/*
 	 	display: inline-block !important;
 	 	width: 50% !important;
+	 	*/
 	}
 }
 
 /* For desktops: */
-.vhm-share-buttons-list {
- 	margin: 5px 0;
+.vhm-share-buttons {
+	margin: 20px 0;
 }
 .vhm-share-buttons-list {
  	list-style-type: none;
  	padding: 0px;
+ 	margin: 5px 0;
+ 	text-align: center;	
 }
 .vhm-share-buttons-list li {
- 	display: block;
+ 	display: inline;
  	width: 100%;
 }
-.vhm-share-buttons-list li a, a#vhm-share-buttons-android, .vhm-share-buttons-list li a:hover, a#vhm-share-buttons-android:hover {
+.vhm-share-buttons-list li a, 
+a#vhm-share-buttons-android, 
+.vhm-share-buttons-list li a:hover, 
+a#vhm-share-buttons-android:hover {
  	color: #fff;
  	padding: 8px 16px;
  	margin: 5px;
- 	display: block;
+ 	display: inline-block;
  	text-align: center;
  	text-decoration: none;
 }
 
+/* SOCIAL MEDIA COLORS */
 .vhm-share-buttons-list li a#vhm-share-buttons-facebook {
  	background: #3b5998;
 }

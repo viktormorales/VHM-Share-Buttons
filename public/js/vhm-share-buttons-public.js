@@ -37,11 +37,8 @@
 			var link = jQuery("#vhm-share-buttons-whatsapp");
 			link.attr("href","whatsapp://send?text=" + link.data('text'));
 	   	}
-
-	   	if (navigator.userAgent.match(/Android/i)) 
+	   	else if (navigator.userAgent.match(/Android/i)) 
 	   	{
-			jQuery(".vhm-share-buttons-list").hide();
-
 			var android_btn = jQuery("#vhm-share-buttons-android");
 
 			android_btn.show();
