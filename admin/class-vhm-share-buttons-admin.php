@@ -172,6 +172,15 @@ class Vhm_Share_Buttons_Admin {
 		);
 
 		add_settings_field(
+			$this->option_name . '_icons',
+			__( 'Buttons display', $this->plugin_name ),
+			array( $this, $this->option_name .'_icons_cb' ),
+			$this->plugin_name,
+			$this->option_name . '_general',
+			array( 'label_for' => $this->option_name . '_icons' )
+		);
+
+		add_settings_field(
 			$this->option_name . '_source',
 			__( 'Source', $this->plugin_name ),
 			array( $this, $this->option_name .'_source_cb' ),
@@ -183,6 +192,7 @@ class Vhm_Share_Buttons_Admin {
 		register_setting( $this->plugin_name, $this->option_name . '_active' );
 		register_setting( $this->plugin_name, $this->option_name . '_main_title' );
 		register_setting( $this->plugin_name, $this->option_name . '_applications' );
+		register_setting( $this->plugin_name, $this->option_name . '_icons' );
 		register_setting( $this->plugin_name, $this->option_name . '_source' );
 	}
 	/**
@@ -252,6 +262,23 @@ class Vhm_Share_Buttons_Admin {
 		echo (is_array($applications) && in_array("link", $applications))? " checked" : false;
 		echo '> Show the link of the post to copy and paste</label><br>';
 
+		echo '</fieldset>';
+	}
+	/**
+	 * Render the textarea field for "before items template" option
+	 *
+	 * @since  1.0.0
+	 */
+	public function vhm_share_buttons_icons_cb() {
+		$icons = get_option( $this->option_name . '_icons' );
+		
+		echo '<fieldset><legend class="screen-reader-text"><span>Buttons display</span></legend>';
+
+		echo '<label><select name="' . $this->option_name . '_icons">'; 
+		echo '<option value="default" ' . selected($icons, 'default', false) .'>' . __('Icon and Label', $this->plugin_name) . '</option>';
+		echo '<option value="icon" ' . selected($icons, 'icon', false) .'>' . __('Only icon', $this->plugin_name) . '</option>';
+		echo '<option value="label" ' . selected($icons, 'label', false) .'>' . __('Only Label', $this->plugin_name) . '</option>';
+		echo '></select></label><br>';
 		echo '</fieldset>';
 	}
 	/**
