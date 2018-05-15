@@ -131,7 +131,7 @@ class Vhm_Share_Buttons_Public {
 			if ($main_title)
 				$output .= '<h2>'.$main_title.'</h2>';
 
-			$output .= '<ul class="vhm-share-buttons-list">';
+			$output .= '<ul id="vhm-share-buttons-list" class="vhm-share-buttons-list">';
 
 			/* FACEBOOK */
 			if (in_array("facebook", $applications)) 

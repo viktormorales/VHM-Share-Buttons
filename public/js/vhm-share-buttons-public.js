@@ -29,6 +29,7 @@
 	 * practising this, we should strive to set a better example in our own work.
 	 */
 	jQuery(function() {
+
 		/* If the userAgent is iPhone or Android
 		 * change the HREF link with the whatsapp
 	     */
@@ -37,11 +38,18 @@
 			var link = jQuery("#vhm-share-buttons-whatsapp");
 			link.attr("href","whatsapp://send?text=" + link.data('text'));
 	   	}
-	   	else if (navigator.userAgent.match(/Android/i)) 
+	   	
+	   	/*
+	   	 * If the userAgent is Android, activate the Web Share API
+	   	 */
+	   	if (navigator.userAgent.match(/Android/i)) 
 	   	{
 			var android_btn = jQuery("#vhm-share-buttons-android");
+			var list_btn = jQuery("#vhm-share-buttons-list");
 
 			android_btn.show();
+			list_btn.hide();
+			
 			android_btn.click(function(e) {
 				e.preventDefault();
 				navigator.share({title: jQuery(this).data('title'), url: jQuery(this).data('url')}).then(console.log('Share successful'));
