@@ -29,7 +29,7 @@
 	 * practising this, we should strive to set a better example in our own work.
 	 */
 	jQuery(function() {
-
+		
 		/* If the userAgent is iPhone or Android
 		 * change the HREF link with the whatsapp
 	     */

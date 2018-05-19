@@ -323,14 +323,22 @@ class Vhm_Share_Buttons_Admin {
  
     public function save_meta_box($post_id)
     {
-        $state = ($_POST['vhm_share_buttons_show_in_page']) ? 'on' : 'off' ;
-        update_post_meta($post_id,'_vhm_share_buttons_show_in_page',$state);
+    	$update_state = ($_POST['vhm_share_buttons_show_in_page'] == 1) ? 'on' : 'off' ;
+        update_post_meta($post_id,'_vhm_share_buttons_show_in_page',$upate_state);
     }
  
     public function html_meta_box($post)
     {
         $vhm_share_buttons_show_in_page = get_post_meta($post->ID, '_vhm_share_buttons_show_in_page', true);
-        $state = (!$vhm_share_buttons_show_in_page || $vhm_share_buttons_show_in_page === 0) ? 'on' : $vhm_share_buttons_show_in_page ;
+        # Default is ON
+    	if (!$vhm_share_buttons_show_in_page)
+    	{
+    		$state = 'on';
+    	}
+    	else
+    	{
+			$state = $vhm_share_buttons_show_in_page;
+    	}
         ?>
         <p class="meta-options"><label><input type="checkbox" id="vhm_share_buttons_show_in_page" name="vhm_share_buttons_show_in_page" value="1" <?php checked( $state, 'on' ); ?>> <?php _e('Show share buttons on this page.', VHMTHEME_TEXTDOMAIN) ?></label></p>
     	
