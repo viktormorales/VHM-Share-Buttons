@@ -113,7 +113,6 @@ class Vhm_Share_Buttons_Public {
 		global $post;
 
 		$active = get_option($this->option_name . '_active');
-		$state = ($vhm_share_buttons_show_in_page == 0) ? 'on' : $vhm_share_buttons_show_in_page ;
 		$main_title = get_option($this->option_name . '_main_title');
 		$applications = get_option($this->option_name . '_applications');
 		$icons = get_option($this->option_name . '_icons');
@@ -124,12 +123,13 @@ class Vhm_Share_Buttons_Public {
 		$vhm_share_buttons_show_in_page = get_post_meta($post->ID, '_vhm_share_buttons_show_in_page', true);
 		$show_in_page = (!$vhm_share_buttons_show_in_page || $vhm_share_buttons_show_in_page === 0) ? 'on' : $vhm_share_buttons_show_in_page ;
 
-		if (is_array($source) && is_singular($source) && $show_in_page == 'on') {
+		if (is_array($source) && is_singular($source) && $show_in_page == 'on') 
+		{
 			
 			$output .= '<div class="vhm-share-buttons" style="clear:both">';
 			
 			if ($main_title)
-				$output .= '<h2>'.$main_title.'</h2>';
+				$output .= '<h2>'. $main_title .'</h2>';
 
 			$output .= '<ul id="vhm-share-buttons-list" class="vhm-share-buttons-list">';
 
@@ -207,11 +207,11 @@ class Vhm_Share_Buttons_Public {
         return $post_content;
 	}
 
-	public function strip_shortcode_from_excerpt( $content ) {
-		if (has_excerpt()) {
-			$content = strip_shortcodes( $content );
-		}
-		return $content;
+	public function get_the_excerpt( $content ) 
+	{
+		# This avoids "the content" showing the "main title" text in the excerpt
+		$main_title = get_option($this->option_name . '_main_title');
+		return str_replace($main_title, '', $content);
 	}
 
 }

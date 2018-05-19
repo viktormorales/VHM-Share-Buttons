@@ -324,7 +324,7 @@ class Vhm_Share_Buttons_Admin {
     public function save_meta_box($post_id)
     {
     	$update_state = ($_POST['vhm_share_buttons_show_in_page'] == 1) ? 'on' : 'off' ;
-        update_post_meta($post_id,'_vhm_share_buttons_show_in_page',$upate_state);
+        update_post_meta($post_id,'_vhm_share_buttons_show_in_page',$update_state);
     }
  
     public function html_meta_box($post)
