@@ -60,4 +60,5 @@ a#vhm-share-buttons-android:hover {
 }
 #vhm-share-buttons-android {
  	background: #0dc143;
+ 	display: block;
 }

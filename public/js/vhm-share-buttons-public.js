@@ -29,7 +29,7 @@
 	 * practising this, we should strive to set a better example in our own work.
 	 */
 	jQuery(function() {
-		
+
 		/* If the userAgent is iPhone or Android
 		 * change the HREF link with the whatsapp
 	     */
@@ -47,7 +47,7 @@
 			var android_btn = jQuery("#vhm-share-buttons-android");
 			var list_btn = jQuery("#vhm-share-buttons-list");
 
-			android_btn.show();
+			android_btn.css('display', 'block');
 			list_btn.hide();
 			
 			android_btn.click(function(e) {
