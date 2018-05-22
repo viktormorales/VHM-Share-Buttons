@@ -1,14 +1,14 @@
 === VHM Share Buttons ===
 Contributors: viktormorales
-Donate link: https://viktormorales.com
+Donate link: https://paypal.me/viktormorales/10
 Tags: share, buttons, posts, facebook, twitter, skype, whatsapp, telegram
-Requires at least: 3.0.1
-Tested up to: 3.4
-Stable tag: 1.0.1
+Requires at least: 4.0
+Tested up to: 4.9.6
+Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Here is a short description of the plugin.  This should be no more than 150 characters.  No markup here.
+Show buttons to share content on the most popular social platforms
 
 == Description ==
 
