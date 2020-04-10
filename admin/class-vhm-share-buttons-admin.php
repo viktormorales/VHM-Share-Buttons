@@ -245,10 +245,6 @@ class Vhm_Share_Buttons_Admin {
 		echo '<label><input type="checkbox" name="' . $this->option_name . '_applications[]" value="twitter"';
 		echo (is_array($applications) && in_array("twitter", $applications))? " checked" : false;
 		echo '> Twitter</label><br>';
-		/* Share on Google+ */
-		echo '<label><input type="checkbox" name="' . $this->option_name . '_applications[]" value="google"';
-		echo (is_array($applications) && in_array("google", $applications))? " checked" : false;
-		echo '> Google+</label><br>';
 		/* Share on WhatsApp*/
 		echo '<label><input type="checkbox" name="' . $this->option_name . '_applications[]" value="whatsapp"';
 		echo (is_array($applications) && in_array("whatsapp", $applications))? " checked" : false;
@@ -313,7 +309,7 @@ class Vhm_Share_Buttons_Admin {
         foreach ($screens as $screen) {
             add_meta_box(
                 'vhm_share_buttons_meta_box',          // Unique ID
-                __('VHM Share Buttons', VHMTHEME_TEXTDOMAIN), // Box title
+                __('VHM Share Buttons',  $this->plugin_name), // Box title
                 [self::class, 'html_meta_box'],   // Content callback, must be of type callable
                 $screens,
                 'advanced'
@@ -331,17 +327,10 @@ class Vhm_Share_Buttons_Admin {
     {
         $vhm_share_buttons_show_in_page = get_post_meta($post->ID, '_vhm_share_buttons_show_in_page', true);
         # Default is ON
-    	if (!$vhm_share_buttons_show_in_page)
-    	{
-    		$state = 'on';
-    	}
-    	else
-    	{
-			$state = $vhm_share_buttons_show_in_page;
-    	}
+    	$state = (!$vhm_share_buttons_show_in_page) ? 'on' : $vhm_share_buttons_show_in_page ;
+
         ?>
-        <p class="meta-options"><label><input type="checkbox" id="vhm_share_buttons_show_in_page" name="vhm_share_buttons_show_in_page" value="1" <?php checked( $state, 'on' ); ?>> <?php _e('Show share buttons on this page.', VHMTHEME_TEXTDOMAIN) ?></label></p>
-    	
+        <p class="meta-options"><label><input type="checkbox" id="vhm_share_buttons_show_in_page" name="vhm_share_buttons_show_in_page" value="1" <?php checked( $state, 'on' ); ?>> <?php _e('Show share buttons on this page.', $plugin_name) ?></label></p>
         <?php
     }
 }
