@@ -4,14 +4,14 @@
  */
 
 /* Small devices (landscape phones, 576px and up) */
+/*
 @media (max-width: 576px) {
 	.vhm-share-buttons-list li {
-		/*
 	 	display: inline-block !important;
 	 	width: 50% !important;
-	 	*/
 	}
 }
+*/
 
 /* For desktops: */
 .vhm-share-buttons {
@@ -25,7 +25,7 @@
 }
 .vhm-share-buttons-list li {
  	display: inline;
- 	width: 100%;
+ 	/*width: 100%;*/
 }
 .vhm-share-buttons-list li a, 
 a#vhm-share-buttons-android, 
