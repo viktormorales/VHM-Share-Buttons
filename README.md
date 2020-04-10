@@ -15,7 +15,6 @@ WordPress plugin to share content on the most popular platforms / applications
 * A very basic "Plugin Settings" (ready to add the buttons)
 * Facebook
 * Twitter
-* Google+
 * WhatsApp
 * Telegram
 * ... and the option to copy the link.
