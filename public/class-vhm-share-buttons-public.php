@@ -156,7 +156,7 @@ class Vhm_Share_Buttons_Public {
 			}
 			/* WHATSAPP */
 			if (in_array("whatsapp", $applications)) {
-				$output .= '<li><a id="vhm-share-buttons-whatsapp" href="https://api.whatsapp.com/send?text='.get_permalink($post->ID).'" data-text="'.get_permalink($post->ID).'" onclick="javascript:window.open(this.href,\'share\',\'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=600\');return false;" title="Whatsapp">';
+				$output .= '<li><a id="vhm-share-buttons-whatsapp" href="https://wa.me/?text='.get_permalink($post->ID).'" data-text="'.get_permalink($post->ID).'" onclick="javascript:window.open(this.href,\'share\',\'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=600\');return false;" title="Whatsapp">';
 
 				if ($icons == 'default') { $output .= '<i class="fab fa-whatsapp"></i> ' . __('Whatsapp', $this->plugin_name); }
 				elseif ($icons == 'icon') { $output .= '<i class="fab fa-whatsapp"></i>'; }
