@@ -5,7 +5,7 @@ WordPress plugin to share content on the most popular platforms / applications
 <img style="width:100%" src="https://github.com/viktormorales/VHM-Share-Buttons/blob/master/screenshot.png">
 
 ## Setup
-* Download the [Master branch](https://github.com/viktormorales/VHM-Share-Buttons/archive/master.zip).
+* Download the [Main branch](https://github.com/viktormorales/VHM-Share-Buttons/archive/main.zip).
 * Extract the files from the ZIP.
 * Copy/Upload the folder into your *wp-content/plugins* WordPress folder
 * Activate the plugin and start working.
@@ -18,6 +18,7 @@ WordPress plugin to share content on the most popular platforms / applications
 * WhatsApp
 * Telegram
 * ... and the option to copy the link.
+* For secure websites (HTTPS), will show one button on mobile devices.
 
 ## Author
 * Viktor H. Morales ([viktormorales.com](https://viktormorales.com))
