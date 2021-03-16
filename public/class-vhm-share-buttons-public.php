@@ -105,12 +105,41 @@ class Vhm_Share_Buttons_Public {
 		 */
 
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/vhm-share-buttons-public.js', array( 'jquery' ), $this->version, false );
-		wp_enqueue_script( 'fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js', false, $this->version, true );
+		wp_enqueue_script( $this->plugin_name . '-fa', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/js/all.min.js', false, $this->version, true );
 	}
 
 	public function the_content($post_content)
 	{
 		global $post;
+		
+		$display = get_option($this->option_name . '_display');
+		switch ($display) {
+			case "before_content":
+				return do_shortcode('[vhm-share-buttons]') . $post_content;
+				break;
+			case "after_content":
+				return $post_content . do_shortcode('[vhm-share-buttons]');
+				break;
+		}
+        
+	}
+
+	public function get_the_excerpt( $content ) 
+	{
+		# This avoids "the content" showing the "main title" text in the excerpt
+		$main_title = get_option($this->option_name . '_main_title');
+		return str_replace($main_title, '', $content);
+	}
+
+
+	/**
+	 * Shortcode
+	 */
+	public function register_shortcodes() {
+		add_shortcode( 'vhm-share-buttons', [$this, 'vhm_share_button_sc'] );
+	}
+
+	public function vhm_share_button_sc($atts) {
 
 		$active = get_option($this->option_name . '_active');
 		$main_title = get_option($this->option_name . '_main_title');
@@ -129,7 +158,7 @@ class Vhm_Share_Buttons_Public {
 			$output .= '<div class="vhm-share-buttons" style="clear:both">';
 			
 			if ($main_title)
-				$output .= '<h2>'. $main_title .'</h2>';
+				$output .= $main_title;
 
 			$output .= '<ul id="vhm-share-buttons-list" class="vhm-share-buttons-list">';
 
@@ -190,18 +219,11 @@ class Vhm_Share_Buttons_Public {
 			$output .= '<a id="vhm-share-buttons-android" style="display:none;" href="javascript:void()" data-title="'.get_the_title($post->ID).'" data-url="'.get_permalink($post->ID).'">' . __('Share on...', $this->plugin_name) . '</a></div>';
 
 			if ($active)
-				$post_content = $post_content . $output;
+				return $output;
 			
 		}
-		
-        return $post_content;
-	}
 
-	public function get_the_excerpt( $content ) 
-	{
-		# This avoids "the content" showing the "main title" text in the excerpt
-		$main_title = get_option($this->option_name . '_main_title');
-		return str_replace($main_title, '', $content);
+		return $output;
 	}
 
 }
