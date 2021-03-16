@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Plantilla Wordpress\n"
-"POT-Creation-Date: 2020-04-10 20:05-0300\n"
-"PO-Revision-Date: 2020-04-10 20:07-0300\n"
+"POT-Creation-Date: 2021-03-15 23:13-0300\n"
+"PO-Revision-Date: 2021-03-15 23:14-0300\n"
 "Last-Translator: Viktor H. Morales <viktorhugomorales@gmail.com>\n"
 "Language-Team: Viktor H. Morales <viktorhugomorales@gmail.com>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 2.4.2\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_nx:4c,1,2;_ex:1,2c\n"
@@ -21,7 +21,7 @@ msgid "VHM Share Buttons Settings"
 msgstr "VHM Share Buttons"
 
 #: ../admin/class-vhm-share-buttons-admin.php:120
-#: ../admin/class-vhm-share-buttons-admin.php:312
+#: ../admin/class-vhm-share-buttons-admin.php:331
 msgid "VHM Share Buttons"
 msgstr "VHM Share Buttons"
 
@@ -49,7 +49,11 @@ msgstr "Mostrar en el botón"
 msgid "Source"
 msgstr "Fuentes"
 
-#: ../admin/class-vhm-share-buttons-admin.php:204
+#: ../admin/class-vhm-share-buttons-admin.php:193
+msgid "Display"
+msgstr "Mostrar"
+
+#: ../admin/class-vhm-share-buttons-admin.php:213
 msgid ""
 "Display buttons at the end of your content to share in the applications "
 "listed below."
@@ -57,67 +61,84 @@ msgstr ""
 "Muestra botones al final del articulo para compartirlo con las siguientes "
 "aplicaciones."
 
-#: ../admin/class-vhm-share-buttons-admin.php:217
+#: ../admin/class-vhm-share-buttons-admin.php:226
 msgid "Tick the box if you want to display the buttons."
 msgstr "Tilde la opcion para mostrar los botones."
 
-#: ../admin/class-vhm-share-buttons-admin.php:228
+#: ../admin/class-vhm-share-buttons-admin.php:235
 msgid "The title you want to display to invite users to share your post."
 msgstr ""
 "El titulo que quieres mostrar para invitar a los usuarios a compartir la "
 "entrada."
 
-#: ../admin/class-vhm-share-buttons-admin.php:239
+#: ../admin/class-vhm-share-buttons-admin.php:244
 msgid "Choose the applications you want to share your content to:"
 msgstr "Elije las aplicaciones en las que quieras compartir el contenido:"
 
-#: ../admin/class-vhm-share-buttons-admin.php:274
+#: ../admin/class-vhm-share-buttons-admin.php:277
 msgid "Icon and Label"
 msgstr "Icono y etiqueta"
 
-#: ../admin/class-vhm-share-buttons-admin.php:275
+#: ../admin/class-vhm-share-buttons-admin.php:278
 msgid "Only icon"
 msgstr "Solo icono"
 
-#: ../admin/class-vhm-share-buttons-admin.php:276
+#: ../admin/class-vhm-share-buttons-admin.php:279
 msgid "Only Label"
 msgstr "Solo etiqueta"
 
-#: ../admin/class-vhm-share-buttons-admin.php:290
+#: ../admin/class-vhm-share-buttons-admin.php:291
 msgid "Choose the sources you want to display the buttons:"
 msgstr "Elije las fuentes donde quieras mostrar los botones:"
 
-#: ../admin/class-vhm-share-buttons-admin.php:339
+#: ../admin/class-vhm-share-buttons-admin.php:314
+msgid "Before content"
+msgstr "Antes del contenido"
+
+#: ../admin/class-vhm-share-buttons-admin.php:315
+msgid "After content"
+msgstr "Después del contenido"
+
+#: ../admin/class-vhm-share-buttons-admin.php:316
+msgid "Use shortcode"
+msgstr "Usar shortcode"
+
+#: ../admin/class-vhm-share-buttons-admin.php:318
+#, php-format
+msgid "Use the shortcode %s where you want to display the share buttons."
+msgstr "Use el shortcode %s donde quiera mostrar los botones."
+
+#: ../admin/class-vhm-share-buttons-admin.php:352
 msgid "Show share buttons on this page."
 msgstr "Mostrar botones de compartir en esta página."
 
-#: ../public/class-vhm-share-buttons-public.php:141
-#: ../public/class-vhm-share-buttons-public.php:143
+#: ../public/class-vhm-share-buttons-public.php:170
+#: ../public/class-vhm-share-buttons-public.php:172
 msgid "Facebook"
 msgstr "Facebook"
 
-#: ../public/class-vhm-share-buttons-public.php:151
-#: ../public/class-vhm-share-buttons-public.php:153
+#: ../public/class-vhm-share-buttons-public.php:180
+#: ../public/class-vhm-share-buttons-public.php:182
 msgid "Twitter"
 msgstr "Twitter"
 
-#: ../public/class-vhm-share-buttons-public.php:161
-#: ../public/class-vhm-share-buttons-public.php:163
+#: ../public/class-vhm-share-buttons-public.php:190
+#: ../public/class-vhm-share-buttons-public.php:192
 msgid "Whatsapp"
 msgstr "WhatsApp"
 
-#: ../public/class-vhm-share-buttons-public.php:171
-#: ../public/class-vhm-share-buttons-public.php:173
+#: ../public/class-vhm-share-buttons-public.php:200
+#: ../public/class-vhm-share-buttons-public.php:202
 msgid "Telegram"
 msgstr "Telegram"
 
-#: ../public/class-vhm-share-buttons-public.php:180
-#: ../public/class-vhm-share-buttons-public.php:182
-#: ../public/class-vhm-share-buttons-public.php:184
+#: ../public/class-vhm-share-buttons-public.php:209
+#: ../public/class-vhm-share-buttons-public.php:211
+#: ../public/class-vhm-share-buttons-public.php:213
 msgid "Copy link"
 msgstr "Copiar enlace"
 
-#: ../public/class-vhm-share-buttons-public.php:190
+#: ../public/class-vhm-share-buttons-public.php:219
 msgid "Share on..."
 msgstr "Compartir en..."
 
@@ -258,9 +279,6 @@ msgstr "Compartir en..."
 
 #~ msgid "(Edit)"
 #~ msgstr "(Editar)"
-
-#~ msgid "Add some featured content"
-#~ msgstr "Cree contenido destacado"
 
 #~ msgid ""
 #~ "Go to the WordPress dashboard and add some featured content to be display "
@@ -503,9 +521,6 @@ msgstr "Compartir en..."
 
 #~ msgid "Designed by"
 #~ msgstr "Diseño por"
-
-#~ msgid "Table of contents"
-#~ msgstr "Tabla de contenidos"
 
 #~ msgid "Reply <span>&darr;</span>"
 #~ msgstr "Responder <span>&darr;</span>"
