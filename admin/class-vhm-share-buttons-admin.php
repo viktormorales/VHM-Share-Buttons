@@ -188,12 +188,21 @@ class Vhm_Share_Buttons_Admin {
 			$this->option_name . '_general',
 			array( 'label_for' => $this->option_name . '_source' )
 		);
+		add_settings_field(
+			$this->option_name . '_display',
+			__( 'Display', $this->plugin_name ),
+			array( $this, $this->option_name .'_display_cb' ),
+			$this->plugin_name,
+			$this->option_name . '_general',
+			array( 'label_for' => $this->option_name . '_display' )
+		);
 		
 		register_setting( $this->plugin_name, $this->option_name . '_active' );
 		register_setting( $this->plugin_name, $this->option_name . '_main_title' );
 		register_setting( $this->plugin_name, $this->option_name . '_applications' );
 		register_setting( $this->plugin_name, $this->option_name . '_icons' );
 		register_setting( $this->plugin_name, $this->option_name . '_source' );
+		register_setting( $this->plugin_name, $this->option_name . '_display' );
 	}
 	/**
 	 * Render the text for the general section
@@ -204,7 +213,7 @@ class Vhm_Share_Buttons_Admin {
 		echo '<p>' . __( 'Display buttons at the end of your content to share in the applications listed below.', $this->plugin_name ) . '</p>';
 	}
 	/**
-	 * Render the input field for "element" option
+	 * Render the "active" checkbox
 	 *
 	 * @since  1.0.0
 	 */
@@ -217,20 +226,16 @@ class Vhm_Share_Buttons_Admin {
 		echo __('Tick the box if you want to display the buttons.', $this->plugin_name) . '</label>';
 	}
 	/**
-	 * Render the input field for "element" option
-	 *
-	 * @since  1.0.0
+	 * Render the "main title" input
 	 */
 	public function vhm_share_buttons_main_title_cb() {
 		$main_title = get_option( $this->option_name . '_main_title' );
 		
-		echo '<input type="text" name="' . $this->option_name . '_main_title' . '" id="' . $this->option_name . '_main_title' . '" value="' . $main_title . '">';
+		echo '<input type="text" name="' . $this->option_name . '_main_title' . '" id="' . $this->option_name . '_main_title' . '" value="' . esc_attr($main_title) . '">';
 		echo '<p><span class="description">' . __('The title you want to display to invite users to share your post.', $this->plugin_name) . '</span><br></p>';
 	}
 	/**
-	 * Render the textarea field for "before items template" option
-	 *
-	 * @since  1.0.0
+	 * Render "Applications" checkboxes
 	 */
 	public function vhm_share_buttons_applications_cb() {
 		$applications = get_option( $this->option_name . '_applications' );
@@ -261,9 +266,7 @@ class Vhm_Share_Buttons_Admin {
 		echo '</fieldset>';
 	}
 	/**
-	 * Render the textarea field for "before items template" option
-	 *
-	 * @since  1.0.0
+	 * Render the "Buttons display" select
 	 */
 	public function vhm_share_buttons_icons_cb() {
 		$icons = get_option( $this->option_name . '_icons' );
@@ -278,15 +281,13 @@ class Vhm_Share_Buttons_Admin {
 		echo '</fieldset>';
 	}
 	/**
-	 * Render the textarea field for "before items template" option
-	 *
-	 * @since  1.0.0
+	 * Render the "Sources" checkboxes
 	 */
 	public function vhm_share_buttons_source_cb() {
 
 		$source = get_option( $this->option_name . '_source' );
 		
-		echo '<fieldset><legend class="screen-reader-text"><span>Applications</span></legend>';
+		echo '<fieldset><legend class="screen-reader-text"><span>Source</span></legend>';
 		echo '<p>' . __('Choose the sources you want to display the buttons:', $this->plugin_name) . '</p>';
 		
 		$args = array(
@@ -301,9 +302,27 @@ class Vhm_Share_Buttons_Admin {
 
 		echo '</fieldset>';
 	}
+	/**
+	 * Render the "Display" select
+	 */
+	public function vhm_share_buttons_display_cb() {
+		$display = get_option( $this->option_name . '_display' );
+		
+		echo '<fieldset><legend class="screen-reader-text"><span>Display</span></legend>';
 
-	public function add_meta_box()
-    {
+		echo '<label><select name="' . $this->option_name . '_display">'; 
+		echo '<option value="after_content" ' . selected($display, 'after_content', false) .'>' . __('Before content', $this->plugin_name) . '</option>';
+		echo '<option value="before_content" ' . selected($display, 'before_content', false) .'>' . __('After content', $this->plugin_name) . '</option>';
+		echo '<option value="shortcode" ' . selected($display, 'shortcode', false) .'>' . __('Use shortcode', $this->plugin_name) . '</option>';
+		echo '></select></label><br>';
+		echo '</fieldset><p class="desciption">' . sprintf(__('Use the shortcode %s where you want to display the share buttons.'), '<code>[vhm-share-buttons]</code>')  . '</p>';
+	}
+
+	/**
+	 * Meta Boxes for each post, page, producto or custom post type
+	 *
+	 */
+	public function add_meta_box() {
 
         $screens = get_option($this->option_name . '_source');
         foreach ($screens as $screen) {
