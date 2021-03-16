@@ -2,7 +2,7 @@
 
 WordPress plugin to share content on the most popular platforms / applications
 
-<img style="width:100%" src="https://github.com/viktormorales/VHM-Share-Buttons/blob/master/screenshot.png">
+<img style="width:100%" src="https://github.com/viktormorales/VHM-Share-Buttons/blob/main/screenshot.png">
 
 ## Setup
 * Download the [Main branch](https://github.com/viktormorales/VHM-Share-Buttons/archive/main.zip).
