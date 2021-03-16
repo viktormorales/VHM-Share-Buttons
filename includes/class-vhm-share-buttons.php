@@ -182,6 +182,7 @@ class Vhm_Share_Buttons {
 		$this->loader->add_filter( 'the_content', $plugin_public, 'the_content');
 		$this->loader->add_filter( 'get_the_excerpt', $plugin_public, 'get_the_excerpt');
 
+		$this->loader->add_action( 'init', $plugin_public, 'register_shortcodes');
 	}
 
 	/**
