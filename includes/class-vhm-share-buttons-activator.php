@@ -49,11 +49,24 @@ class Vhm_Share_Buttons_Activator {
 	public static function activate() {
 		global $wpdb;
         
-		// Add default options
-		update_option(self::$option_name . '_active', 'on');
-		update_option(self::$option_name . '_applications', array('facebook','twitter','whatsapp','telegram','link'));
-		update_option(self::$option_name . '_source', array('post','page'));
-		update_option(self::$option_name . '_display', 'after_content');
+		// Get options
+		$active = get_option(self::$option_name . '_active');
+		$applications = get_option(self::$option_name . '_applications');
+		$source = get_option(self::$option_name . '_source');
+		$display = get_option(self::$option_name . '_display');
+
+		// If they are not yet setted, add default options
+		if (!$active)
+			update_option(self::$option_name . '_active', 'on');
+
+		if (!$applications)
+			update_option(self::$option_name . '_applications', array('facebook','twitter','whatsapp','telegram','link'));
+		
+		if (!$source)
+			update_option(self::$option_name . '_source', array('post','page'));
+		
+		if (!$display)
+			update_option(self::$option_name . '_display', 'after_content');
 	}
 
 }
