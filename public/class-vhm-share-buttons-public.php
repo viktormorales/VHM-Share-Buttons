@@ -120,6 +120,9 @@ class Vhm_Share_Buttons_Public {
 			case "after_content":
 				return $post_content . do_shortcode('[vhm-share-buttons]');
 				break;
+			default:
+				return $post_content;
+				break;
 		}
         
 	}
