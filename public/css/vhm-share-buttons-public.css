@@ -59,6 +59,6 @@ a#vhm-share-buttons-android:hover {
  	background: grey;
 }
 #vhm-share-buttons-android {
- 	background: #0dc143;
+ 	color: inherit;
  	display: block;
 }
