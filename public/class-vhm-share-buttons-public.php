@@ -114,10 +114,10 @@ class Vhm_Share_Buttons_Public {
 		
 		$display = get_option($this->option_name . '_display');
 		switch ($display) {
-			case "before_content":
+			case "after_content":
 				return do_shortcode('[vhm-share-buttons]') . $post_content;
 				break;
-			case "after_content":
+			case "before_content":
 				return $post_content . do_shortcode('[vhm-share-buttons]');
 				break;
 			default:
