@@ -6,7 +6,7 @@ Requires at Least: 3.7
 Tested Up To: 5.7
 Requires PHP: 7.0
 Tags: share, social, facebook, twitter, telegram, whatsapp, button
-Stable tag: 1.0
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
