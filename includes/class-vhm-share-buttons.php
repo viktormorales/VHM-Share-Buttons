@@ -67,8 +67,8 @@ class Vhm_Share_Buttons {
 	 * @since    1.0.0
 	 */
 	public function __construct() {
-		if ( defined( 'PLUGIN_NAME_VERSION' ) ) {
-			$this->version = PLUGIN_NAME_VERSION;
+		if ( defined( 'VHM_SHARE_BUTTONS_VERSION' ) ) {
+			$this->version = VHM_SHARE_BUTTONS_VERSION;
 		} else {
 			$this->version = '1.0.0';
 		}
@@ -154,14 +154,14 @@ class Vhm_Share_Buttons {
 
 		$plugin_admin = new Vhm_Share_Buttons_Admin( $this->get_plugin_name(), $this->get_version() );
 
-		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
-		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
+		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'vhmsb_enqueue_styles' );
+		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'vhmsb_enqueue_scripts' );
 
-		$this->loader->add_action( 'admin_menu', $plugin_admin, 'add_options_page' );
-		$this->loader->add_action( 'admin_init', $plugin_admin, 'register_setting' );
+		$this->loader->add_action( 'admin_menu', $plugin_admin, 'vhmsb_add_options_page' );
+		$this->loader->add_action( 'admin_init', $plugin_admin, 'vhmsb_register_setting' );
 
-		$this->loader->add_action('add_meta_boxes', $plugin_admin, 'add_meta_box');
-		$this->loader->add_action('save_post', $plugin_admin, 'save_meta_box');
+		$this->loader->add_action('add_meta_boxes', $plugin_admin, 'vhmsb_add_meta_box');
+		$this->loader->add_action('save_post', $plugin_admin, 'vhmsb_save_meta_box');
 
 	}
 
@@ -176,13 +176,13 @@ class Vhm_Share_Buttons {
 
 		$plugin_public = new Vhm_Share_Buttons_Public( $this->get_plugin_name(), $this->get_version() );
 
-		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
-		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
+		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'vhmsb_enqueue_styles' );
+		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'vhmsb_enqueue_scripts' );
 
-		$this->loader->add_filter( 'the_content', $plugin_public, 'the_content');
-		$this->loader->add_filter( 'get_the_excerpt', $plugin_public, 'get_the_excerpt');
+		$this->loader->add_filter( 'the_content', $plugin_public, 'vhmsb_the_content');
+		$this->loader->add_filter( 'get_the_excerpt', $plugin_public, 'vhmsb_get_the_excerpt');
 
-		$this->loader->add_action( 'init', $plugin_public, 'register_shortcodes');
+		$this->loader->add_action( 'init', $plugin_public, 'vhmsb_register_shortcodes');
 	}
 
 	/**

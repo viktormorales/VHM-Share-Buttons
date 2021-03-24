@@ -68,7 +68,7 @@ class Vhm_Share_Buttons_Public {
 	 *
 	 * @since    1.0.0
 	 */
-	public function enqueue_styles() {
+	public function vhmsb_enqueue_styles() {
 
 		/**
 		 * This function is provided for demonstration purposes only.
@@ -90,7 +90,7 @@ class Vhm_Share_Buttons_Public {
 	 *
 	 * @since    1.0.0
 	 */
-	public function enqueue_scripts() {
+	public function vhmsb_enqueue_scripts() {
 
 		/**
 		 * This function is provided for demonstration purposes only.
@@ -108,7 +108,7 @@ class Vhm_Share_Buttons_Public {
 		wp_enqueue_script( $this->plugin_name . '-fa', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/js/all.min.js', false, $this->version, true );
 	}
 
-	public function the_content($post_content)
+	public function vhmsb_the_content($post_content)
 	{
 		global $post;
 		
@@ -127,7 +127,7 @@ class Vhm_Share_Buttons_Public {
         
 	}
 
-	public function get_the_excerpt( $content ) 
+	public function vhmsb_get_the_excerpt( $content ) 
 	{
 		# This avoids "the content" showing the "main title" text in the excerpt
 		$main_title = get_option($this->option_name . '_main_title');
@@ -138,7 +138,7 @@ class Vhm_Share_Buttons_Public {
 	/**
 	 * Shortcode
 	 */
-	public function register_shortcodes() {
+	public function vhmsb_register_shortcodes() {
 		add_shortcode( 'vhm-share-buttons', [$this, 'vhm_share_button_sc'] );
 	}
 

@@ -68,7 +68,7 @@ class Vhm_Share_Buttons_Admin {
 	 *
 	 * @since    1.0.0
 	 */
-	public function enqueue_styles() {
+	public function vhmsb_enqueue_styles() {
 
 		/**
 		 * This function is provided for demonstration purposes only.
@@ -91,7 +91,7 @@ class Vhm_Share_Buttons_Admin {
 	 *
 	 * @since    1.0.0
 	 */
-	public function enqueue_scripts() {
+	public function vhmsb_enqueue_scripts() {
 
 		/**
 		 * This function is provided for demonstration purposes only.
@@ -114,13 +114,13 @@ class Vhm_Share_Buttons_Admin {
 	 *
 	 * @since  1.0.0
 	 */
-	public function add_options_page() {
+	public function vhmsb_add_options_page() {
 		$this->plugin_screen_hook_suffix = add_options_page(
 			__( 'VHM Share Buttons Settings', $this->plugin_name ),
 			__( 'VHM Share Buttons', $this->plugin_name ),
 			'manage_options',
 			$this->plugin_name,
-			array( $this, 'display_options_page' )
+			array( $this, 'vhmsb_display_options_page' )
 		);
 	}
 	/**
@@ -128,7 +128,7 @@ class Vhm_Share_Buttons_Admin {
 	 *
 	 * @since  1.0.0
 	 */
-	public function display_options_page() {
+	public function vhmsb_display_options_page() {
 		include_once 'partials/'.$this->plugin_name.'-admin-display.php';
 	}
 	/**
@@ -136,7 +136,7 @@ class Vhm_Share_Buttons_Admin {
 	 *
 	 * @since  1.0.0
 	 */
-	public function register_setting() {
+	public function vhmsb_register_setting() {
 		add_settings_section(
 			$this->option_name . '_general',
 			__( 'General', $this->plugin_name ),
@@ -322,27 +322,27 @@ class Vhm_Share_Buttons_Admin {
 	 * Meta Boxes for each post, page, producto or custom post type
 	 *
 	 */
-	public function add_meta_box() {
+	public function vhmsb_add_meta_box() {
 
         $screens = get_option($this->option_name . '_source');
         foreach ($screens as $screen) {
             add_meta_box(
                 'vhm_share_buttons_meta_box',          // Unique ID
                 __('VHM Share Buttons',  $this->plugin_name), // Box title
-                [self::class, 'html_meta_box'],   // Content callback, must be of type callable
+                [self::class, 'vhmsb_html_meta_box'],   // Content callback, must be of type callable
                 $screens,
                 'advanced'
             );
         }
     }
  
-    public function save_meta_box($post_id)
+    public function vhmsb_save_meta_box($post_id)
     {
     	$update_state = ($_POST['vhm_share_buttons_show_in_page'] == 1) ? 'on' : 'off' ;
         update_post_meta($post_id,'_vhm_share_buttons_show_in_page',$update_state);
     }
  
-    public function html_meta_box($post)
+    public function vhmsb_html_meta_box($post)
     {
         $vhm_share_buttons_show_in_page = get_post_meta($post->ID, '_vhm_share_buttons_show_in_page', true);
         # Default is ON
