@@ -35,7 +35,7 @@
 	     */
 		if (navigator.userAgent.match(/iPhone|Android/i)) 
 		{
-			var link = jQuery("#vhm-share-buttons-whatsapp");
+			let link = jQuery("#vhm-share-buttons-whatsapp");
 			link.attr("href","whatsapp://send?text=" + link.data('text'));
 	   	}
 	   	
@@ -43,9 +43,10 @@
 	   	 * If the userAgent is Android, activate the Web Share API
 	   	 */
 	   	if (navigator.userAgent.match(/Android/i)) 
-	   	{
-			var android_btn = jQuery("#vhm-share-buttons-android");
-			var list_btn = jQuery("#vhm-share-buttons-list");
+		{
+			//let title_btn = jQuery("#vhm-share-buttons strong");
+			let android_btn = jQuery("#vhm-share-buttons-android");
+			let list_btn = jQuery(".vhm-share-buttons-title, #vhm-share-buttons-list");
 
 			android_btn.css('display', 'block');
 			list_btn.hide();
@@ -60,7 +61,7 @@
 	   	{
 	   		e.preventDefault();
 
-	   		var $temp = jQuery("<input>");
+	   		let $temp = jQuery("<input>");
 			jQuery("body").append($temp);
 			$temp.val(jQuery(this).attr("href")).select();
 			document.execCommand("copy");
