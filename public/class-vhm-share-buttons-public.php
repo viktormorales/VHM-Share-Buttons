@@ -64,29 +64,7 @@ class Vhm_Share_Buttons_Public {
 	}
 
 	/**
-	 * Register the stylesheets for the public-facing side of the site.
-	 *
-	 * @since    1.0.0
-	 */
-	public function vhmsb_enqueue_styles() {
-
-		/**
-		 * This function is provided for demonstration purposes only.
-		 *
-		 * An instance of this class should be passed to the run() function
-		 * defined in Vhm_Share_Buttons_Loader as all of the hooks are defined
-		 * in that particular class.
-		 *
-		 * The Vhm_Share_Buttons_Loader will then create the relationship
-		 * between the defined hooks and the functions defined in this
-		 * class.
-		 */
-
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/vhm-share-buttons-public.css', array(), $this->version, 'all' );
-	}
-
-	/**
-	 * Register the JavaScript for the public-facing side of the site.
+	 * Register the CSS & JavaScript for the public-facing side of the site.
 	 *
 	 * @since    1.0.0
 	 */
@@ -103,9 +81,10 @@ class Vhm_Share_Buttons_Public {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
+		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/vhm-share-buttons-public.css', false, time(), 'all' );
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/vhm-share-buttons-public.js', array( 'jquery' ), $this->version, false );
-		wp_enqueue_script( $this->plugin_name . '-fa', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/js/all.min.js', false, $this->version, true );
+		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/vhm-share-buttons-public.js', ['jquery'], time(), true );
+		wp_enqueue_script( $this->plugin_name . '-fa', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/js/all.min.js', false, time(), true );
 	}
 
 	public function vhmsb_the_content($post_content)
@@ -161,7 +140,7 @@ class Vhm_Share_Buttons_Public {
 			$output .= '<div class="vhm-share-buttons" style="clear:both">';
 			
 			if ($main_title)
-				$output .= $main_title;
+				$output .= '<div class="vhm-share-buttons-title">' . $main_title . '</div>';
 
 			$output .= '<ul id="vhm-share-buttons-list" class="vhm-share-buttons-list">';
 
@@ -219,7 +198,7 @@ class Vhm_Share_Buttons_Public {
 			}
 			$output .= '</ul>';
 
-			$output .= '<a id="vhm-share-buttons-android" style="display:none;" href="javascript:void()" data-title="'.get_the_title($post->ID).'" data-url="'.get_permalink($post->ID).'">' . __('Share on...', $this->plugin_name) . '</a></div>';
+			$output .= '<a id="vhm-share-buttons-android" style="display:none;" href="javascript:void()" data-title="'.get_the_title($post->ID).'" data-url="'.get_permalink($post->ID).'">' . $main_title . '</a></div>';
 
 			if ($active)
 				return $output;

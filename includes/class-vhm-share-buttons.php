@@ -154,7 +154,6 @@ class Vhm_Share_Buttons {
 
 		$plugin_admin = new Vhm_Share_Buttons_Admin( $this->get_plugin_name(), $this->get_version() );
 
-		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'vhmsb_enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'vhmsb_enqueue_scripts' );
 
 		$this->loader->add_action( 'admin_menu', $plugin_admin, 'vhmsb_add_options_page' );
@@ -176,7 +175,6 @@ class Vhm_Share_Buttons {
 
 		$plugin_public = new Vhm_Share_Buttons_Public( $this->get_plugin_name(), $this->get_version() );
 
-		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'vhmsb_enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'vhmsb_enqueue_scripts' );
 
 		$this->loader->add_filter( 'the_content', $plugin_public, 'vhmsb_the_content');
