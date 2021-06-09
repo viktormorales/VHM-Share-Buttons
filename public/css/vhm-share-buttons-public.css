@@ -21,11 +21,9 @@
  	list-style-type: none;
  	padding: 0px;
  	margin: 5px 0;
- 	text-align: center;	
-}
-.vhm-share-buttons-list li {
- 	display: inline;
- 	/*width: 100%;*/
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 }
 .vhm-share-buttons-list li a, 
 a#vhm-share-buttons-android, 
@@ -59,6 +57,6 @@ a#vhm-share-buttons-android:hover {
  	background: grey;
 }
 #vhm-share-buttons-android {
- 	color: inherit;
  	display: block;
+	background: #9fc037;
 }
