@@ -17,7 +17,7 @@
  * Plugin URI:        https://github.com/viktormorales/VHM-Share-Buttons
  * GitHub Plugin URI: https://github.com/viktormorales/VHM-Share-Buttons
  * Description:       Add social buttons to your WordPress Theme.
- * Version:           1.0.2
+ * Version:           1.0.3
  * Author:            Viktor H. Morales
  * Author URI:        https://viktormorales.com
  * License:           GPL-2.0+
@@ -36,7 +36,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.2 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'VHM_SHARE_BUTTONS_VERSION', '1.0.2' );
+define( 'VHM_SHARE_BUTTONS_VERSION', '1.0.3' );
 
 /**
  * The code that runs during plugin activation.
