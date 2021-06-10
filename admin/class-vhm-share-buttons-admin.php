@@ -308,9 +308,10 @@ class Vhm_Share_Buttons_Admin {
             add_meta_box(
                 'vhm_share_buttons_meta_box',          // Unique ID
                 __('VHM Share Buttons',  $this->plugin_name), // Box title
-                [self::class, 'vhmsb_html_meta_box'],   // Content callback, must be of type callable
+                [$this, 'vhmsb_html_meta_box'],   // Content callback, must be of type callable
                 $screens,
-                'advanced'
+                'side',
+				'high'
             );
         }
     }
@@ -323,11 +324,14 @@ class Vhm_Share_Buttons_Admin {
  
     public function vhmsb_html_meta_box($post)
     {
-        # Default is ON
+        # Default is YES
     	$state = get_post_meta($post->ID, '_vhm_share_buttons_show_in_page', true) ;
-
         ?>
-        <p class="meta-options"><label><input type="checkbox" id="vhm_share_buttons_show_in_page" name="vhm_share_buttons_show_in_page" <?php checked( $state, 'on' ); ?>> <?php _e('Show share buttons on this page.', $plugin_name) ?></label></p>
+        <p class="meta-options"><label><?php _e('Show share buttons on this page', $plugin_name) ?>:</label> 
+		<select id="vhm_share_buttons_show_in_page" name="vhm_share_buttons_show_in_page">
+			<option value="yes" <?php echo selected($state, 'yes'); ?>><?php _e('Yes', $this->plugin_name); ?></option>
+			<option value="no" <?php echo selected($state, 'no'); ?>><?php _e('No', $this->plugin_name); ?></option>
+		</select></p>
         <?php
     }
 }

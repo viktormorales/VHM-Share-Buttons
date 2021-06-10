@@ -132,9 +132,9 @@ class Vhm_Share_Buttons_Public {
 		$output = '';
 		
 		$show_in_page = get_post_meta($post->ID, '_vhm_share_buttons_show_in_page', true);
-
+		
 		if ($active) {
-			if (is_array($source) && is_singular($source) && $show_in_page == 'on') {
+			if (is_array($source) && is_singular($source) && $show_in_page !== 'no') {
 			
 				$output .= '<div class="vhm-share-buttons" style="clear:both">';
 				
