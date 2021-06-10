@@ -20,9 +20,15 @@ WordPress plugin to share content on the most popular platforms / applications
 * ... and the option to copy the link.
 * For secure websites (HTTPS), will show one button on mobile devices.
 
+## Changelog
+### 1.0.3
+* FIX default options show buttons to true
+
+### 1.0
+* First release.
+
 ## Author
-* Viktor H. Morales ([viktormorales.com](https://viktormorales.com))
-* Twitter: [@viktormorales](http://viktormorales.com)
+* Viktor H. Morales [@vhmfreelance](https://instagram.com/vhmfreelance)
 
 ## License
 Released under the [MIT license](http://www.opensource.org/licenses/MIT).

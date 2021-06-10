@@ -6,7 +6,7 @@ Requires at Least: 3.7
 Tested Up To: 5.7
 Requires PHP: 7.0
 Tags: share, social, facebook, twitter, telegram, whatsapp, button
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -36,5 +36,8 @@ WordPress plugin to share content on the most popular platforms / applications
 Released under the [MIT license](http://www.opensource.org/licenses/MIT).
 
 ==Changelog==
+= 1.0.4 =
+* FIX default options show buttons to true
+
 = 1.0 =
 * First release.
